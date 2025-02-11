@@ -1,0 +1,23 @@
+name: Grid CI
+
+on:
+  workflow_dispatch:
+    inputs:
+      repository-name:
+        description: "Name of the Repository Name"
+        required: true
+        default: "repository"
+      image-name:
+        description: "Name of the Docker image"
+        required: true
+        default: "my-app"
+
+jobs:
+  gridcloud:
+    uses: RunOnGrid/test-workflows-reusable/.github/workflows/ci.yml@main
+    permissions: write-all
+    with:
+      image-name: ${{ inputs.image-name }}
+      repository-name: ${{ inputs.repository-name }}
+    secrets:
+      ghcr-token: ${{ secrets.GHCR_TOKEN }}
