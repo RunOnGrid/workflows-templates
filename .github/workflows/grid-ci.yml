@@ -13,8 +13,8 @@ on:
         default: "my-app"
 
 jobs:
-  gridcloud:
-    uses: RunOnGrid/test-workflows-reusable/.github/workflows/ci.yml@main
+  grid:
+    uses: RunOnGrid/workflows-reusable/.github/workflows/ci.yml@main
     permissions: write-all
     with:
       image-name: ${{ inputs.image-name }}

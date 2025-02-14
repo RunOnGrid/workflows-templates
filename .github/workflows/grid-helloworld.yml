@@ -4,5 +4,5 @@ on:
   workflow_dispatch:
 
 jobs:
-  gridcloud:
-    uses: RunOnGrid/test-workflows-reusable/.github/workflows/hello-world.yml@main
+  grid:
+    uses: RunOnGrid/workflows-reusable/.github/workflows/hello-world.yml@main
